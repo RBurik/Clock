@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="clock" id="clock1">
+      <div class="hour">
+        <div class="hr" id="hr"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="clock" id="clock2">
+      <div class="hour">
+        <div class="hr" id="hr1"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn1"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc1"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="clock" id="clock3">
+      <div class="hour">
+        <div class="hr" id="hr2"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn2"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="clock" id="clock4">
+      <div class="hour">
+        <div class="hr" id="hr3"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn3"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const deg = 6
+    const hr = document.querySelector('#hr')
+    const mn = document.querySelector('#mn')
+    const sc = document.querySelector('#sc')
+    const hr1 = document.querySelector('#hr1')
+    const mn1 = document.querySelector('#mn1')
+    const sc1 = document.querySelector('#sc1')
+    const hr2 = document.querySelector('#hr2')
+    const mn2 = document.querySelector('#mn2')
+    const sc2 = document.querySelector('#sc2')
+    const hr3 = document.querySelector('#hr3')
+    const mn3 = document.querySelector('#mn3')
+    const sc3 = document.querySelector('#sc3')
+
+    setInterval(() => {
+      let day = new Date()
+      let hh = day.getHours() * 30
+      let mm = day.getMinutes() * deg
+      let ss = day.getSeconds() * deg
+
+      hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`
+      mn.style.transform = `rotateZ(${mm}deg)`
+      sc.style.transform = `rotateZ(${ss}deg)`
+      hr1.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`
+      mn1.style.transform = `rotateZ(${mm}deg)`
+      sc1.style.transform = `rotateZ(${ss}deg)`
+      hr2.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`
+      mn2.style.transform = `rotateZ(${mm}deg)`
+      sc2.style.transform = `rotateZ(${ss}deg)`
+      hr3.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`
+      mn3.style.transform = `rotateZ(${mm}deg)`
+      sc3.style.transform = `rotateZ(${ss}deg)`
+    })
+  </script>
+</body>
+
+</html>
